@@ -1,0 +1,6 @@
+*.bin
+*.txt
+*.train
+*.valid
+dev.*
+devtest.*
