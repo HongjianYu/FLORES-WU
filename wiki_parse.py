@@ -4,7 +4,7 @@ import re
 from tqdm.notebook import tqdm
 
 # %%
-lang = "wuu"
+lang = "mandarin"
 
 # %%
 if lang == "mandarin":
