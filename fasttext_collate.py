@@ -1,5 +1,6 @@
 # %%
 import jieba
+import cantoseg
 import opencc
 from tqdm.notebook import tqdm
 
@@ -15,6 +16,7 @@ else:
   print("Options: train, valid")
 
 # %%
+jieba.load_userdict("wuu-dict.txt")
 converter = opencc.OpenCC('t2s.json')
 
 files = [open(ds, 'r') for ds in datasets]
@@ -43,8 +45,8 @@ for line in texts[-2]:
   all_out.write(segmented)
 
 for line in texts[-1]:
-  seg_list = jieba.cut(converter.convert(line), cut_all=False)
-  segmented = "__label__yue " + " ".join(seg_list)
+  seg_list = cantoseg.cut(line)
+  segmented = "__label__yue " + converter.convert(" ".join(seg_list))
   out[2].write(segmented)
   all_out.write(segmented)
 
