@@ -1,6 +1,8 @@
 *.bin
 *.txt
-*.train*
-*.valid*
 dev.*
 devtest.*
+*.train*
+*.valid*
+
+!wuu-dict.txt
